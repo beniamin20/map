@@ -1,5 +1,7 @@
 import model.SortingTask;
+import model.Strategy;
 import model.TaskArray;
+import repo.TaskContainerFactory;
 
 public class Main {
 
@@ -21,5 +23,9 @@ public class Main {
         tTask.size();
         tTask.delete(1);
         tTask.size();
+
+        TaskContainerFactory container = TaskContainerFactory.getInstance();
+        container.createContainer(Strategy.FIFO);
+        container.createContainer(Strategy.LIFO);
     }
 }

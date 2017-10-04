@@ -8,16 +8,23 @@ import model.Strategy;
 
 
 public class TaskContainerFactory implements Factory {
+    private static final TaskContainerFactory instance = new TaskContainerFactory();
 
+    private TaskContainerFactory() {
+    }
+
+    public static TaskContainerFactory getInstance() {
+        return instance;
+    }
 
     @Override
     public Container createContainer(Strategy type) {
 
         if(type == Strategy.FIFO) {
-            // return a fifo
+            return new QueueContainer();
 
         } else if(type == Strategy.LIFO) {
-            // return a lifo
+            return  new StackContainer();
         }
 
         return null;

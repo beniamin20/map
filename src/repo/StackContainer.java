@@ -20,24 +20,35 @@ public class StackContainer implements Container {
         this.array = array;
     }
 
+    public StackContainer(TaskArray array) {
+        this.array = array;
+    }
+
+    public StackContainer() {
+    }
+
     @Override
     public AbstractTask remove() {
-
+        array.delete(0);
         return null;
     }
 
     @Override
     public void add(AbstractTask task) {
-
+        array.add(0, task);
     }
 
     @Override
     public int size() {
-        return 0;
+        return array.size();
     }
 
     @Override
     public boolean isEmpty() {
+        if(array.size() == 0) {
+            return  true;
+        }
+
         return false;
     }
 }

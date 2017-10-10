@@ -10,6 +10,13 @@ import model.TaskArray;
 public class QueueContainer implements Container {
     private TaskArray array;
 
+    public QueueContainer() {
+    }
+
+    public QueueContainer(TaskArray array) {
+        this.array = array;
+    }
+
     public TaskArray getArray() {
         return array;
     }
@@ -20,17 +27,19 @@ public class QueueContainer implements Container {
 
     @Override
     public AbstractTask remove() {
+        int size = array.size() - 1;
+        array.delete(size);
         return null;
     }
 
     @Override
     public void add(AbstractTask task) {
-
+        array.add(0, task);
     }
 
     @Override
     public int size() {
-        return 0;
+        return array.size();
     }
 
     @Override

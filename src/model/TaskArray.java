@@ -5,34 +5,34 @@ package model;
  */
 
 public class TaskArray extends SortingTask {
-    SortingTask[] vector;
+    AbstractTask[] vector;
 
-    public TaskArray(SortingTask[] vector) {
+    public TaskArray(AbstractTask[] vector) {
         this.vector = vector;
     }
 
-    public SortingTask[] getVector() {
+    public AbstractTask[] getVector() {
         return vector;
     }
 
-    public void setVector(SortingTask[] vector) {
+    public void setVector(AbstractTask[] vector) {
         this.vector = vector;
     }
 
-    public SortingTask get(int pos) {
-        SortingTask posTask = vector[pos];
+    public AbstractTask get(int pos) {
+        AbstractTask posTask = vector[pos];
         return posTask;
     }
 
-    public void add(SortingTask elem) {
-        SortingTask[] v = new SortingTask[vector.length + 1];
+    public void add(AbstractTask elem) {
+        AbstractTask[] v = new AbstractTask[vector.length + 1];
         System.arraycopy(vector, 0, v, 0, vector.length);
         v[vector.length] = elem;
         setVector(v);
     }
 
-    public void add(int pos, SortingTask elem) {
-        SortingTask[] result = new SortingTask[vector.length + 1];
+    public void add(int pos, AbstractTask elem) {
+        AbstractTask[] result = new AbstractTask[vector.length + 1];
 
         for(int i = 0; i < pos; i++) {
             result[i] = vector[i];
@@ -48,7 +48,7 @@ public class TaskArray extends SortingTask {
     }
 
     public void delete(int pos) {
-        SortingTask[] result = new SortingTask[vector.length - 1];
+        AbstractTask[] result = new AbstractTask[vector.length - 1];
 
         for(int i = 0; i < pos; i++) {
             result[i] = vector[i];
@@ -61,8 +61,9 @@ public class TaskArray extends SortingTask {
         setVector(result);
     }
 
-    public void size() {
+    public int size() {
         System.out.println(vector.length);
+        return vector.length;
     }
 
     @Override

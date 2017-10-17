@@ -1,39 +1,35 @@
 package model;
 
 public abstract class TaskRunnerDecorator implements TaskRunner {
-    private TaskRunner task;
+    protected TaskRunner decoratedTaskRunner;
 
     public TaskRunnerDecorator(TaskRunner task) {
-        this.task = task;
+        this.decoratedTaskRunner = task;
     }
 
     public TaskRunnerDecorator() {
-
     }
 
     @Override
     public void executeOneTask() {
-        task.executeOneTask();
+        decoratedTaskRunner.executeOneTask();
     }
 
     @Override
     public void executeAll() {
-        task.executeAll();
-    }
-
-    @Override
-    public boolean hasTask() {
-        if(task != null) {
-            return true;
+        while (decoratedTaskRunner.hasTask()) {
+            executeOneTask();
         }
-
-        return false;
     }
 
     @Override
     public void addTask(AbstractTask t) {
-        //
+        decoratedTaskRunner.addTask(t);
     }
 
+    @Override
+    public boolean hasTask() {
+        return  decoratedTaskRunner.hasTask();
+    }
 
 }

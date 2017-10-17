@@ -13,23 +13,8 @@ public class PrinterTaskRunner extends TaskRunnerDecorator {
 
     @Override
     public void executeOneTask() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
+        decoratedTaskRunner.executeOneTask();
+        System.out.println("task executed at "+ new Date().toString());
     }
 
-    @Override
-    public void executeAll() {
-
-    }
-
-    @Override
-    public void addTask(AbstractTask t) {
-
-    }
-
-    @Override
-    public boolean hasTask() {
-        return false;
-    }
 }

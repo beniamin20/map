@@ -2,27 +2,30 @@ package repo;
 
 import model.AbstractTask;
 import model.TaskArray;
+import repo.AbstractContainer;
+
 
 /**
  * Created by benipater on 04/10/2017.
  */
 
-public class QueueContainer implements Container {
-    private TaskArray array;
+public class QueueContainer extends AbstractContainer {
+
+    public QueueContainer(TaskArray array) {
+        super(array);
+    }
 
     public QueueContainer() {
     }
 
-    public QueueContainer(TaskArray array) {
-        this.array = array;
-    }
-
+    @Override
     public TaskArray getArray() {
-        return array;
+        return super.getArray();
     }
 
+    @Override
     public void setArray(TaskArray array) {
-        this.array = array;
+        super.setArray(array);
     }
 
     @Override
@@ -37,13 +40,4 @@ public class QueueContainer implements Container {
         array.add(0, task);
     }
 
-    @Override
-    public int size() {
-        return array.size();
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
 }

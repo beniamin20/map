@@ -9,19 +9,10 @@ import model.TaskArray;
  *
  */
 
-public class StackContainer implements Container {
-    private TaskArray array;
-
-    public TaskArray getArray() {
-        return array;
-    }
-
-    public void setArray(TaskArray array) {
-        this.array = array;
-    }
+public class StackContainer extends AbstractContainer {
 
     public StackContainer(TaskArray array) {
-        this.array = array;
+        super(array);
     }
 
     public StackContainer() {

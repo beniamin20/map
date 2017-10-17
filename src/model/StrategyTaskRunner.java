@@ -3,14 +3,6 @@ package model;
 import repo.Container;
 
 public class StrategyTaskRunner implements TaskRunner {
-    public Container getRepo() {
-        return repo;
-    }
-
-    public void setRepo(Container repo) {
-        this.repo = repo;
-    }
-
     private Container repo;
 
     public StrategyTaskRunner(Container repo) {

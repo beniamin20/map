@@ -1,17 +1,24 @@
 package model;
 
 public class ID {
-    private int value;
+    private Integer value;
+    private String stringValue;
 
-    public ID(int value) {
+    public ID(Integer value) {
         this.value = value;
+        this.stringValue = value.toString();
     }
 
-    public int getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public String getStringValue() {
+        return stringValue;
+    }
+
+    @Override
+    public String toString() {
+        return "" + value;
     }
 }

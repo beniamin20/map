@@ -2,12 +2,10 @@ package repository;
 
 import model.*;
 
+import java.util.Collection;
 import java.util.Map;
 
 public class CandidatRepository extends  AbstractCrudRepository<Candidat, ID> {
-
-    public CandidatRepository() {
-    }
 
     public CandidatRepository(Map<String, Candidat> entitati) {
         super(entitati);
@@ -19,8 +17,18 @@ public class CandidatRepository extends  AbstractCrudRepository<Candidat, ID> {
     }
 
     @Override
-    public Candidat save(Candidat entity) {
-        return super.save(entity);
+    public Candidat add(Candidat entity) {
+        return super.add(entity);
+    }
+
+    @Override
+    public Candidat update(Candidat entity) {
+        try {
+            return super.update(entity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  null;
+        }
     }
 
     @Override
@@ -34,7 +42,7 @@ public class CandidatRepository extends  AbstractCrudRepository<Candidat, ID> {
     }
 
     @Override
-    public Iterable<Candidat> findAll() {
+    public Collection<Candidat> findAll() {
         return super.findAll();
     }
 }

@@ -1,9 +1,12 @@
 package repository;
 
+import java.util.Collection;
+
 public interface Repository<E, ID> {
     long size();
-    E save(E entity);
+    E add(E entity);
+    E update(E entity) throws Exception;
     E delete(ID id);
     E findOne(ID id);
-    Iterable<E> findAll();
+    Collection<E> findAll();
 }

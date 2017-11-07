@@ -13,9 +13,6 @@ public class Sectie implements HasID<ID> {
         this.nrLoc = nrLoc;
     }
 
-    public Sectie() {
-    }
-
     public String getNume() {
         return nume;
     }
@@ -34,7 +31,7 @@ public class Sectie implements HasID<ID> {
 
     @Override
     public ID getId() {
-        return null;
+        return id;
     }
 
     @Override

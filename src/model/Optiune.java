@@ -1,11 +1,11 @@
 package model;
 
 public class Optiune {
-    private int idOptiune;
-    private int idCandidat;
+    private ID idOptiune;
+    private ID idCandidat;
     private Sectie sectie;
 
-    public Optiune(int idOptiune, int idCandidat, Sectie sectie) {
+    public Optiune(ID idOptiune, ID idCandidat, Sectie sectie) {
         this.idOptiune = idOptiune;
         this.idCandidat = idCandidat;
         this.sectie = sectie;
@@ -14,19 +14,19 @@ public class Optiune {
     public Optiune() {
     }
 
-    public int getIdOptiune() {
+    public ID getIdOptiune() {
         return idOptiune;
     }
 
-    public void setIdOptiune(int idOptiune) {
+    public void setIdOptiune(ID idOptiune) {
         this.idOptiune = idOptiune;
     }
 
-    public int getIdCandidat() {
+    public ID getIdCandidat() {
         return idCandidat;
     }
 
-    public void setIdCandidat(int idCandidat) {
+    public void setIdCandidat(ID  idCandidat) {
         this.idCandidat = idCandidat;
     }
 

@@ -9,9 +9,17 @@ public class Candidat implements HasID<ID> {
     private String mail;
     private int varsta;
 
+    public Candidat(ID id, String nume, String telefon, String mail, int varsta) {
+        this.id = id;
+        this.nume = nume;
+        this.telefon = telefon;
+        this.mail = mail;
+        this.varsta = varsta;
+    }
+
     @Override
     public ID getId() {
-        return null;
+        return id;
     }
 
     @Override
